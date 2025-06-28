@@ -1,0 +1,51 @@
+{
+    "compilerOptions": {
+        "target": "ES2022",
+        "module": "NodeNext",
+        "moduleResolution": "NodeNext",
+        "lib": [ "ES2022"],
+        "outDir": "gen/srv",
+        "rootDir": "./srv",
+        "baseUrl": "./",
+        "allowJs": true,
+        "esModuleInterop": true,
+        "inlineSources": true,
+        "inlineSourceMap": true,
+        "paths": {
+            "#cds-models/*": [
+                "./@cds-models/*/index.js"
+            ],
+            "@sap/cds": [
+                "node_modules/@sap/cds"
+            ]
+        },
+        "types": [
+            "node",
+            "@cap-js/cds-types"
+        ],
+    },
+    "typeRoots": [
+        "node_modules/@types",
+        "@cap-js/cds-types"
+    ],
+    "include": [
+        "srv/**/*",
+        "db/**/*",
+        "app/**/*",
+        "@cds-models/**/*"
+    ],
+    "exclude": [
+        "node_modules",
+        "dist",
+        "gen",
+        "eslint.config.mjs"
+    ],
+    "watchOptions": {
+        "watchFile": "useFsEvents",
+        "watchDirectory": "useFsEvents",
+        "fallbackPolling": "dynamicPriority",
+        "synchronousWatchDirectory": true,
+        "excludeDirectories": [ "**/node_modules","_tmp"
+        ]
+    }
+}
